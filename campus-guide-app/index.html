@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Campus Guide App - Navigate your campus easily">
+    <title>Campus Guide App</title>
+    
+    <!-- Leaflet Map Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <h1 class="app-title">🎓 Campus Guide</h1>
+                <p class="app-subtitle">Navigate Your Campus</p>
+            </div>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="app-nav">
+            <button class="nav-tab active" data-tab="map">Map</button>
+            <button class="nav-tab" data-tab="buildings">Buildings</button>
+            <button class="nav-tab" data-tab="facilities">Facilities</button>
+            <button class="nav-tab" data-tab="events">Events</button>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="app-main">
+            <!-- Map Tab -->
+            <section id="map-tab" class="tab-content active">
+                <div class="map-container">
+                    <div id="map" class="map-element"></div>
+                </div>
+                <div class="map-controls">
+                    <input 
+                        type="text" 
+                        id="search-input" 
+                        class="search-box" 
+                        placeholder="Search buildings or facilities..."
+                    >
+                    <button id="search-btn" class="btn btn-primary">Search</button>
+                </div>
+            </section>
+
+            <!-- Buildings Tab -->
+            <section id="buildings-tab" class="tab-content">
+                <div class="buildings-container">
+                    <div class="search-section">
+                        <input 
+                            type="text" 
+                            id="buildings-search" 
+                            class="search-box" 
+                            placeholder="Search buildings..."
+                        >
+                    </div>
+                    <div id="buildings-list" class="buildings-list">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Facilities Tab -->
+            <section id="facilities-tab" class="tab-content">
+                <div class="facilities-container">
+                    <div class="filter-section">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="library">Libraries</button>
+                        <button class="filter-btn" data-filter="cafeteria">Cafeterias</button>
+                        <button class="filter-btn" data-filter="sports">Sports</button>
+                        <button class="filter-btn" data-filter="health">Health</button>
+                    </div>
+                    <div id="facilities-list" class="facilities-list">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Events Tab -->
+            <section id="events-tab" class="tab-content">
+                <div class="events-container">
+                    <div id="events-list" class="events-list">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Details Modal -->
+        <div id="details-modal" class="modal">
+            <div class="modal-content">
+                <span class="modal-close">&times;</span>
+                <div id="modal-body">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/buildings.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
